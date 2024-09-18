@@ -1,70 +1,174 @@
-# Getting Started with Create React App
+# 📁 Personal Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Español](#-espa%C3%B1ol) | [English](#-english) | [Français](#-fran%C3%A7ais)
 
-## Available Scripts
+## 📋 Table of Contents
 
-In the project directory, you can run:
+- [Español](#-español)
+- [English](#-english)
+- [Français](#-français)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📄 Español
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+¡Bienvenido a mi portafolio! Este proyecto muestra una colección de mis trabajos y proyectos más destacados, utilizando una aplicación web desarrollada con React y conectada a la API de GitHub para mostrar mis repositorios.
 
-### `npm test`
+### 🛠 Tecnologías
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **React** - Biblioteca de JavaScript para construir la interfaz de usuario.
+- **HTML5** y **CSS3** - Lenguajes de marcado y estilos para el diseño y estructura de la aplicación.
+- **JavaScript (ES6+)** - Lenguaje de programación principal utilizado en el proyecto.
+- **GitHub API** - Para obtener y mostrar los repositorios automáticamente.
+- **Node.js & npm** - Para gestionar paquetes y dependencias del proyecto.
 
-### `npm run build`
+### 🚀 Características
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Lista dinámica de los repositorios de GitHub con nombre, descripción y enlace.
+- Diseño moderno y responsive para una experiencia de usuario amigable.
+- Sección de contacto para que los visitantes se comuniquen conmigo.
+- Fácil de personalizar y ampliar según nuevas necesidades o proyectos.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 📦 Instalación
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clona el repositorio:
 
-### `npm run eject`
+   ```bash
+   git clone https://github.com/Luisotorres3/Personal-Portfolio.git
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Navega al directorio del proyecto:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```bash
+   cd portfolio
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Instala las dependencias usando npm:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   ```bash
+   npm install
+   ```
 
-## Learn More
+4. Ejecuta la aplicación en modo de desarrollo:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```bash
+   npm start
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. Abre tu navegador y ve a [http://localhost:3000](http://localhost:3000) para ver la aplicación.
 
-### Code Splitting
+### 📞 Contacto
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **Correo electrónico**: luis.soto.torres3@gmail.com
+- **LinkedIn**: [https://www.linkedin.com/in/luisotorres3](https://www.linkedin.com/in/luisotorres3)
+- **GitHub**: [https://github.com/Luisotorres3](https://github.com/Luisotorres3)
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📄 English
 
-### Making a Progressive Web App
+Welcome to my portfolio! This project showcases a collection of my most notable work and projects using a web application developed with React, connected to the GitHub API to display my repositories.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 🛠 Technologies
 
-### Advanced Configuration
+- **React** - JavaScript library for building user interfaces.
+- **HTML5** and **CSS3** - Markup and styling languages for designing and structuring the application.
+- **JavaScript (ES6+)** - Main programming language used in the project.
+- **GitHub API** - To fetch and display repositories automatically.
+- **Node.js & npm** - To manage packages and project dependencies.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 🚀 Features
 
-### Deployment
+- Dynamic list of GitHub repositories with name, description, and link.
+- Modern and responsive design for a user-friendly experience.
+- Contact section for visitors to reach out.
+- Easy to customize and expand based on new needs or projects.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### 📦 Installation
 
-### `npm run build` fails to minify
+1. Clone the repository:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   ```bash
+   git clone https://github.com/Luisotorres3/Personal-Portfolio.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd portfolio
+   ```
+
+3. Install the dependencies using npm:
+
+   ```bash
+   npm install
+   ```
+
+4. Run the application in development mode:
+
+   ```bash
+   npm start
+   ```
+
+5. Open your browser and go to [http://localhost:3000](http://localhost:3000) to view the application.
+
+### 📞 Contact
+
+- **Email**: luis.soto.torres3@gmail.com
+- **LinkedIn**: [https://www.linkedin.com/in/Luisotorres3](https://www.linkedin.com/in/Luisotorres3)
+- **GitHub**: [https://github.com/Luisotorres3](https://github.com/Luisotorres3)
+
+---
+
+## 📄 Français
+
+Bienvenue sur mon portfolio ! Ce projet présente une collection de mes travaux et projets les plus remarquables, à travers une application web développée avec React et connectée à l'API GitHub pour afficher mes dépôts.
+
+### 🛠 Technologies
+
+- **React** - Bibliothèque JavaScript pour construire l'interface utilisateur.
+- **HTML5** et **CSS3** - Langages de balisage et de style pour le design et la structure de l'application.
+- **JavaScript (ES6+)** - Langage de programmation principal utilisé dans le projet.
+- **GitHub API** - Pour récupérer et afficher les dépôts automatiquement.
+- **Node.js & npm** - Pour gérer les paquets et les dépendances du projet.
+
+### 🚀 Fonctionnalités
+
+- Liste dynamique des dépôts GitHub avec le nom, la description et le lien.
+- Design moderne et réactif pour une expérience utilisateur agréable.
+- Section de contact pour que les visiteurs puissent me contacter.
+- Facile à personnaliser et à étendre en fonction des nouveaux besoins ou projets.
+
+### 📦 Installation
+
+1. Clonez le dépôt :
+
+   ```bash
+   git clone https://github.com/Luisotorres3/Personal-Portfolio.git
+   ```
+
+2. Accédez au répertoire du projet :
+
+   ```bash
+   cd portfolio
+   ```
+
+3. Installez les dépendances avec npm :
+
+   ```bash
+   npm install
+   ```
+
+4. Exécutez l'application en mode développement :
+
+   ```bash
+   npm start
+   ```
+
+5. Ouvrez votre navigateur et allez à [http://localhost:3000](http://localhost:3000) pour voir l'application.
+
+### 📞 Contact
+
+- **Email** : luis.soto.torres3@gmail.com
+- **LinkedIn** : [https://www.linkedin.com/in/Luisotorres3](https://www.linkedin.com/in/Luisotorres3)
+- **GitHub** : [https://github.com/Luisotorres3](https://github.com/Luisotorres3)
