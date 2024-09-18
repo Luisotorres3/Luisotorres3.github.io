@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
+//import "./App.css";
+import Navbar from "./Components/Navbar/Navbar";
 
 function App() {
   const [repos, setRepos] = useState([]);
@@ -15,6 +16,7 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar />
       <h1>My GitHub Portfolio</h1>
       <ul>
         {repos.map((repo) => (
