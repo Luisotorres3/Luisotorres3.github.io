@@ -1,10 +1,12 @@
 {
   "files": {
-    "main.css": "/Personal-Portfolio/static/css/main.6c7517d4.css",
-    "main.js": "/Personal-Portfolio/static/js/main.814ba774.js",
-    "static/media/background_projects.avif": "/Personal-Portfolio/static/media/background_projects.d64fa5bfb76dc439ce1b.avif",
-    "static/media/foto.png": "/Personal-Portfolio/static/media/foto.a85a23ffa1cba7d4dd13.png",
+    "main.css": "/Personal-Portfolio/static/css/main.080097e5.css",
+    "main.js": "/Personal-Portfolio/static/js/main.1be7e6ec.js",
+    "static/media/bg_clear.jpg": "/Personal-Portfolio/static/media/bg_clear.767646ccf084c7d0b2b5.jpg",
+    "static/media/background_cork.avif": "/Personal-Portfolio/static/media/background_cork.710d82069f1160a76a8a.avif",
+    "static/media/foto2.png": "/Personal-Portfolio/static/media/foto2.8dd36b85ebbcd4301676.png",
     "static/media/alten-logo.png": "/Personal-Portfolio/static/media/alten-logo.870ff49f23ad6cf4d814.png",
+    "static/media/amadeus-logo.png": "/Personal-Portfolio/static/media/amadeus-logo.990e1ffad192245a7a80.png",
     "static/media/ntt-logo.png": "/Personal-Portfolio/static/media/ntt-logo.4287ffbacb63b743991c.png",
     "static/media/slick.svg": "/Personal-Portfolio/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/Personal-Portfolio/static/media/slick.a4e97f5a2a64f0ab1323.eot",
@@ -13,7 +15,7 @@
     "index.html": "/Personal-Portfolio/index.html"
   },
   "entrypoints": [
-    "static/css/main.6c7517d4.css",
-    "static/js/main.814ba774.js"
+    "static/css/main.080097e5.css",
+    "static/js/main.1be7e6ec.js"
   ]
 }
