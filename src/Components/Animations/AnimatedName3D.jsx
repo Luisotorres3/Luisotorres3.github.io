@@ -54,7 +54,7 @@ function HeroText3D({ handleEnter }) {
       {/* "LUIS" animado desde la izquierda */}
       <Text3D
         ref={refLuis}
-        font="/gt.json"
+        font={"gt.json"}
         size={1}
         height={0.5}
         position={[-15, 0, 0]} // Inicialmente lejos a la izquierda
@@ -70,7 +70,7 @@ function HeroText3D({ handleEnter }) {
       {/* "SOTO" animado desde arriba */}
       <Text3D
         ref={refSoto}
-        font="/gt.json"
+        font={"gt.json"}
         size={1}
         height={0.5}
         position={[0, 10, 0]} // Inicialmente arriba
@@ -86,7 +86,7 @@ function HeroText3D({ handleEnter }) {
       {/* "TORRES" animado desde la derecha */}
       <Text3D
         ref={refTorres}
-        font="/gt.json"
+        font={"gt.json"}
         size={1}
         height={0.5}
         position={[15, 0, 0]} // Inicialmente lejos a la derecha

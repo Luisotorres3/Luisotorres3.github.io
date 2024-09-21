@@ -5,19 +5,17 @@ import Slider from "react-slick"; // Carrusel de react-slick
 import { FaArrowUp } from "react-icons/fa";
 import styles from "./styles/Home.module.css";
 
-// Importa las imágenes localmente
-import previewImage1 from "../assets/images/foto.png"; // Ruta local a tu imagen
-import previewImage2 from "../assets/images/foto.png"; // Otra imagen de ejemplo
-
 export default function Home() {
   return (
     <div
       style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
     >
       <Presentation />
-      <WorkingExperience />
+      <hr className="my-12 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-25 dark:via-neutral-400" />
+      <ExperienceAndStudies />
+      <hr className="my-12 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-25 dark:via-neutral-400" />
       <Projects />
-      <Studies />
+      <hr className="my-12 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-25 dark:via-neutral-400" />
       <ScrollToTopButton />
     </div>
   );
@@ -28,15 +26,24 @@ function Presentation() {
     <section
       id="first_section"
       className="flex flex-col md:flex-row items-center justify-between px-20"
+      style={{
+        //backgroundImage: `url(${require("../assets/images/background_presentation.avif")})`,
+        backgroundSize: "cover", // Ajustar el fondo para que cubra la sección
+        backgroundPosition: "center", // Centrar la imagen de fondo
+        // Hacer que la sección ocupe el 50% de la altura de la pantalla
+      }}
     >
       <div className="w-full md:w-1/2 flex justify-center">
         <motion.img
-          src={require("../assets/images/foto.png")}
+          src={require("../assets/images/foto2.png")}
           alt="Profile"
-          className="rounded-full max-w-full md:w-full mx-auto"
+          className="rounded-lg max-w-full md:w-full mx-auto"
           initial={{ scale: 0 }}
           animate={{ scale: 0.6 }}
           transition={{ duration: 0.5 }}
+          style={{
+            backgroundImage: `url(${require("../assets/images/background_cork.avif")})`,
+          }}
         />
       </div>
       <div className="w-2/4 mt-8 flex flex-col items-center">
@@ -52,11 +59,11 @@ function Presentation() {
             className="bg-rose-800 text-white px-4 py-2 rounded-lg shadow-md"
             onClick={() =>
               document
-                .getElementById("experiences")
+                .getElementById("experience-studies")
                 .scrollIntoView({ behavior: "smooth" })
             }
           >
-            Working Experience
+            Experience & Studies
           </button>
           <button
             className="bg-white text-rose-800 px-4 py-2 rounded-lg shadow-md"
@@ -126,8 +133,8 @@ const experiencias = [
     logo: require("../assets/images/ntt-logo.png"), // Ajusta la ruta de los logos
   },
   {
-    puesto: "Software Developer at ALTEN (Project at AMADEUS)",
-    empresa: "AMADEUS",
+    puesto: "Software Developer",
+    empresa: "ALTEN",
     ubicacion: "Nice, France",
     fechas: "September 2023 - Present",
     descripcion: `
@@ -135,60 +142,116 @@ const experiencias = [
         of the AMADEUS platform, with a focus on performance and system reliability.`,
     logo: require("../assets/images/alten-logo.png"), // Ajusta la ruta de los logos
   },
+  {
+    puesto: "Software Developer (C++)",
+    empresa: "AMADEUS",
+    ubicacion: "Nice, France",
+    fechas: "September 2023 - Present",
+    descripcion: `
+        Working at AMADEUS, focusing on C++ development for key components 
+        of the AMADEUS platform, with a focus on performance and system reliability.`,
+    logo: require("../assets/images/amadeus-logo.png"), // Ajusta la ruta de los logos
+  },
 ];
 
-function WorkingExperience() {
+const estudios = [
+  {
+    titulo: "Degree in Computer Science",
+    institucion: "University of Granada",
+    anio: "2018 - 2024",
+    descripcion: `
+          During my degree in Computer Science, I specialized in Information Technology and gained in-depth knowledge in 
+          data structures, algorithms, software development methodologies, and system architecture. I worked on multiple 
+          projects, including web development, cloud computing, and database management, using technologies like Java, 
+          Python, and SQL. `,
+  },
+  {
+    titulo: "Erasmus+ in Computer Science",
+    institucion: "University of Jyväskylä",
+    anio: "2021 - 2022",
+    descripcion: `
+          As part of the Erasmus+ exchange program, I expanded my knowledge in cutting-edge technologies, focusing on web 
+          development and cloud-based applications. I mastered languages like HTML, CSS, JavaScript, and React, and gained 
+          practical experience with Node.js and REST APIs. I collaborated with international students on innovative projects 
+          that helped me improve my problem-solving skills.`,
+  },
+];
+
+function ExperienceAndStudies() {
   return (
     <section
-      id="experiences"
-      className="relative w-full flex flex-col items-center justify-centers py-16"
+      id="experience-studies"
+      className="relative w-full flex flex-col items-center justify-center py-16"
       style={{ minHeight: "100vh" }}
     >
       <h2 className="text-4xl font-bold mb-12 text-center">
-        Working experience
+        Experience & Studies
       </h2>
 
-      <div className="w-full max-w-4xl space-y-8">
-        {experiencias.map((experiencia, index) => (
-          <div
-            key={index}
-            className="flex items-center space-x-6 p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow"
-          >
-            {/* Logo de la empresa */}
-            <div className="w-20 h-20">
-              <img
-                src={experiencia.logo}
-                alt={experiencia.empresa}
-                className="w-full h-full"
-              />
-            </div>
-
-            {/* Detalles de la experiencia */}
-            <div>
-              <h3 className="text-lg font-semibold text-black">
-                {experiencia.puesto}{" "}
-                <span className="font-normal text-black">
-                  at {experiencia.empresa}
-                </span>
+      <div className="text-start flex flex-col md:flex-row justify-between w-full max-w-7xl">
+        {/* Estudios (a la izquierda en pantallas grandes) */}
+        <div className="w-full md:w-1/2 flex flex-col space-y-8 p-4">
+          <h3 className="text-center text-3xl font-semibold mb-6">
+            My Studies
+          </h3>
+          {estudios.map((estudio, index) => (
+            <div
+              key={index}
+              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            >
+              <h3 className="text-2xl font-semibold text-rose-800 mb-2">
+                {estudio.titulo}
               </h3>
-              <p className="text-sm text-black">{experiencia.fechas}</p>
-              <p className="text-sm text-black mt-2">
-                {experiencia.descripcion}
+              <p className="text-lg text-gray-600 font-semibold">
+                {estudio.institucion}
+              </p>
+              <p className="text-sm text-gray-500 mb-4">{estudio.anio}</p>
+              <p className="mt-2 text-gray-700 leading-relaxed">
+                {estudio.descripcion}
               </p>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+
+        {/* Experiencia (a la derecha en pantallas grandes) */}
+        <div className="w-full md:w-1/2 flex flex-col space-y-8 p-4">
+          <h3 className="text-center text-3xl font-semibold mb-6">
+            Working Experience
+          </h3>
+          {experiencias.map((experiencia, index) => (
+            <div
+              key={index}
+              className="flex items-center space-x-6 p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            >
+              {/* Logo de la empresa */}
+              <div className="w-20 h-20">
+                <img
+                  src={experiencia.logo}
+                  alt={experiencia.empresa}
+                  className="w-full h-full"
+                />
+              </div>
+
+              {/* Detalles de la experiencia */}
+              <div className="text-start">
+                <h3 className="text-lg font-semibold text-black">
+                  {experiencia.puesto}
+                </h3>
+                <h3 className="font-semibold text-black">
+                  {experiencia.empresa}
+                </h3>
+                <p className="text-sm text-black">{experiencia.fechas}</p>
+                <p className="text-sm text-black mt-2">
+                  {experiencia.descripcion}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
-
-// Imágenes de preview
-const projectImages = {
-  "Personal-Portfolio": previewImage1,
-  "repo-2-name": previewImage2,
-  "repo-3-name": previewImage1,
-};
 
 function Projects() {
   const [repos, setRepos] = useState([]);
@@ -244,7 +307,7 @@ function Projects() {
       id="projects"
       className="relative w-full flex flex-col items-center justify-center"
       style={{
-        backgroundImage: `url(${require("../assets/images/background_projects.avif")})`,
+        //backgroundImage: `url(${require("../assets/images/background_projects.avif")})`,
         backgroundSize: "cover", // Ajustar el fondo para que cubra la sección
         backgroundPosition: "center", // Centrar la imagen de fondo
         minHeight: `calc(100vh)`,
@@ -291,60 +354,6 @@ function Projects() {
   );
 }
 
-const estudios = [
-  {
-    titulo: "Degree in Computer Science",
-    institucion: "University of Granada",
-    anio: "2018 - 2024",
-    descripcion: `
-        During my degree in Computer Science, I specialized in Information Technology and gained in-depth knowledge in 
-        data structures, algorithms, software development methodologies, and system architecture. I worked on multiple 
-        projects, including web development, cloud computing, and database management, using technologies like Java, 
-        Python, and SQL. `,
-  },
-  {
-    titulo: "Erasmus+ in Computer Science",
-    institucion: "University of Jyväskylä",
-    anio: "2021 - 2022",
-    descripcion: `
-        As part of the Erasmus+ exchange program, I expanded my knowledge in cutting-edge technologies, focusing on web 
-        development and cloud-based applications. I mastered languages like HTML, CSS, JavaScript, and React, and gained 
-        practical experience with Node.js and REST APIs. I collaborated with international students on innovative projects 
-        that helped me improve my problem-solving skills.`,
-  },
-];
-
-function Studies() {
-  return (
-    <section
-      id="studies"
-      className="relative w-full flex flex-col items-center justify-center"
-      style={{ minHeight: "100vh" }}
-    >
-      <h2 className="text-4xl font-bold mb-12 text-center">My Studies</h2>
-      <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8">
-        {estudios.map((estudio, index) => (
-          <div
-            key={index}
-            className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
-          >
-            <h3 className="text-2xl font-semibold text-rose-800 mb-2">
-              {estudio.titulo}
-            </h3>
-            <p className="text-lg text-gray-600 font-medium">
-              {estudio.institucion}
-            </p>
-            <p className="text-sm text-gray-500 mb-4">{estudio.anio}</p>
-            <p className="mt-2 text-gray-700 leading-relaxed">
-              {estudio.descripcion}
-            </p>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
-
 function ScrollToTopButton() {
   useEffect(() => {
     // Obtener el botón por su ID
@@ -369,10 +378,12 @@ function ScrollToTopButton() {
     return () => window.removeEventListener("scroll", scrollFunction);
   }, []);
 
-  // Función para volver al tope de la página
+  // Función para volver al tope de la página con un desplazamiento suave
   const topFunction = () => {
-    document.body.scrollTop = 0; // Para Safari
-    document.documentElement.scrollTop = 0; // Para Chrome, Firefox, IE y Opera
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Hace que el desplazamiento sea suave
+    });
   };
 
   return (

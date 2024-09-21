@@ -47,4 +47,19 @@ body,
 body {
   display: flex;
   flex-direction: column;
+  transition: background-color 1s ease, color 1s ease;
+}
+
+body {
+  --background: #ffffff;
+  --foreground: #000000;
+  color: #000000 !important;
+  background-image: url(/src/assets/images/bg_clear.jpg);
+}
+
+body.dark {
+  --background: #000000;
+  --foreground: #ffffff;
+  color: white !important;
+  background-image: url("/src/assets/images/bg.jpg");
 }
