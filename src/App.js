@@ -1,33 +1,56 @@
-import React, { useEffect, useState } from "react";
-//import "./App.css";
-import Navbar from "./Components/Navbar/Navbar";
+import React, { useState, useEffect } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
+import NavbarComponent from "./Components/Navbar/Navbar";
+import AnimatedName3D from "./Components/Animations/AnimatedName3D";
+import "./App.css"; // Importa estilos si es necesario
+// Importa los estilos de slick-carousel en tu App.js o index.js
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Projects from "./Pages/Projects";
+
+function RutasApp() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/projects" element={<Projects />} />
+    </Routes>
+  );
+}
 
 function App() {
-  const [repos, setRepos] = useState([]);
+  const location = useLocation(); // Obtener la ruta actual
+  const [showAnimation, setShowAnimation] = useState(false);
 
+  // Verificar si la animación debe mostrarse
   useEffect(() => {
-    fetch("https://api.github.com/users/luisotorres3/repos")
-      .then((response) => response.json())
-      .then((data) => {
-        setRepos(data);
-      })
-      .catch((error) => console.error("Error fetching the repos:", error));
-  }, []);
+    const animationShown = sessionStorage.getItem("animationShown");
+    if (animationShown !== "true" && location.pathname === "/") {
+      setShowAnimation(true);
+    }
+  }, [location.pathname]);
+
+  // Función para manejar el clic en el botón "Entrar"
+  const handleEnter = () => {
+    setShowAnimation(false);
+    sessionStorage.setItem("animationShown", "true");
+  };
 
   return (
     <div className="App">
-      <Navbar />
-      <h1>My GitHub Portfolio</h1>
-      <ul>
-        {repos.map((repo) => (
-          <li key={repo.id}>
-            <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
-              {repo.name}
-            </a>
-            <p>{repo.description}</p>
-          </li>
-        ))}
-      </ul>
+      {showAnimation ? (
+        <AnimatedName3D handleEnter={handleEnter} />
+      ) : (
+        // Contenido principal de la web
+        <>
+          <NavbarComponent />
+          {/* Resto del contenido */}
+          <RutasApp />
+        </>
+      )}
     </div>
   );
 }

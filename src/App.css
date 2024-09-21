@@ -1,17 +1,30 @@
+/* Asegura que el contenedor principal ocupe el 100% de la altura de la pantalla */
 .App {
   font-family: Arial, sans-serif;
   text-align: center;
+  width: 100%;
+  min-height: calc(100vh); /* Ajusta el valor del padding aquí */
+  padding: 2rem 2rem 0 2rem; /* Espaciado interno */
+  box-sizing: border-box; /* Incluir el padding en el tamaño total del elemento */
 }
 
+#first_section {
+  height: calc(100vh - 6rem);
+}
+
+/* Estilos para listas sin viñetas */
 ul {
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
+/* Espaciado para los elementos de lista */
 li {
   margin: 10px 0;
 }
 
+/* Estilos para los enlaces */
 a {
   color: #0366d6;
   text-decoration: none;
@@ -19,4 +32,19 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+/* Asegura que html, body y root ocupen el 100% de la pantalla */
+html,
+body,
+#root {
+  min-height: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
 }

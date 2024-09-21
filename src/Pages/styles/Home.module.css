@@ -1,0 +1,8 @@
+/* Estilo para los puntos del carrusel */
+.customDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: white;
+  margin: 0 5px;
+}

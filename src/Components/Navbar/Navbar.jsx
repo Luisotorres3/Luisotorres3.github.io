@@ -1,69 +1,83 @@
-import React, { useState } from "react";
-import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import {
+  Navbar,
+  NavbarContent,
+  NavbarBrand,
+  NavbarItem,
+} from "@nextui-org/react";
+import { LSLogo } from "./Logo";
+import styles from "./Navbar.module.css";
 
-const Navbar = () => {
-  // State to manage the navbar's visibility
-  const [nav, setNav] = useState(false);
+export default function NavbarComponent() {
+  const location = useLocation();
 
-  // Toggle function to handle the navbar's display
-  const handleNav = () => {
-    setNav(!nav);
+  // Obtener la ruta actual y eliminar el prefijo "#"
+  const pathname = location.pathname.startsWith("/#")
+    ? location.pathname.slice(2)
+    : location.pathname;
+
+  // Mapeo de rutas a nombres de páginas
+  const routeToPage = {
+    "/": "home",
+    "/about": "about",
+    "/projects": "projects",
+    "/contact": "contact",
   };
 
-  // Array containing navigation items
-  const navItems = [
-    { id: 1, text: "Home" },
-    { id: 2, text: "Company" },
-    { id: 3, text: "Resources" },
-    { id: 4, text: "About" },
-    { id: 5, text: "Contact" },
-  ];
+  // Establecer la página activa basada en la ruta actual
+  const activePage = routeToPage[pathname] || "home";
 
   return (
-    <div className="bg-black flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white">
-      {/* Logo */}
-      <h1 className="w-full text-3xl font-bold text-[#00df9a]">REACT.</h1>
-
-      {/* Desktop Navigation */}
-      <ul className="hidden md:flex">
-        {navItems.map((item) => (
-          <li
-            key={item.id}
-            className="p-4 hover:bg-[#00df9a] rounded-xl m-2 cursor-pointer duration-300 hover:text-black"
+    <Navbar shouldHideOnScroll className={styles.navbar}>
+      <NavbarContent className="hidden sm:flex gap-4" justify="left">
+        <NavbarBrand className={styles.logo}>
+          <Link to="/" className={styles["unstyled-link"]}>
+            <LSLogo />
+          </Link>
+        </NavbarBrand>
+      </NavbarContent>
+      <NavbarContent justify="end">
+        <NavbarItem>
+          <Link
+            to="/about"
+            className={`${styles["unstyled-link"]} ${
+              activePage === "about"
+                ? styles["active-link"]
+                : styles["inactive-link"]
+            }`}
+            aria-current={activePage === "about" ? "page" : undefined}
           >
-            {item.text}
-          </li>
-        ))}
-      </ul>
-
-      {/* Mobile Navigation Icon */}
-      <div onClick={handleNav} className="block md:hidden">
-        {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
-      </div>
-
-      {/* Mobile Navigation Menu */}
-      <ul
-        className={
-          nav
-            ? "fixed md:hidden left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500"
-            : "ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]"
-        }
-      >
-        {/* Mobile Logo */}
-        <h1 className="w-full text-3xl font-bold text-[#00df9a] m-4">REACT.</h1>
-
-        {/* Mobile Navigation Items */}
-        {navItems.map((item) => (
-          <li
-            key={item.id}
-            className="p-4 border-b rounded-xl hover:bg-[#00df9a] duration-300 hover:text-black cursor-pointer border-gray-600"
+            About
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link
+            to="/projects"
+            className={`${styles["unstyled-link"]} ${
+              activePage === "projects"
+                ? styles["active-link"]
+                : styles["inactive-link"]
+            }`}
+            aria-current={activePage === "projects" ? "page" : undefined}
           >
-            {item.text}
-          </li>
-        ))}
-      </ul>
-    </div>
+            Projects
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link
+            to="/contact"
+            className={`${styles["unstyled-link"]} ${
+              activePage === "contact"
+                ? styles["active-link"]
+                : styles["inactive-link"]
+            }`}
+            aria-current={activePage === "contact" ? "page" : undefined}
+          >
+            Contact
+          </Link>
+        </NavbarItem>
+      </NavbarContent>
+    </Navbar>
   );
-};
-
-export default Navbar;
+}

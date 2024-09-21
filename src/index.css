@@ -1,13 +1,15 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* src/index.css */
+.inactive-link {
+  color: rgb(
+    214,
+    122,
+    153
+  ); /* Cambia al color que desees para el estado "activo" */
+  pointer-events: none; /* Hace que el enlace no sea clicable */
+  opacity: 0.6; /* Da un efecto visual de desactivado */
 }
