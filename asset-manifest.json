@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/Personal-Portfolio/static/css/main.55d7d59d.css",
-    "main.js": "/Personal-Portfolio/static/js/main.e20c1c7b.js",
-    "static/media/bg_clear.jpg": "/Personal-Portfolio/static/media/bg_clear.767646ccf084c7d0b2b5.jpg",
-    "static/media/background_cork.avif": "/Personal-Portfolio/static/media/background_cork.710d82069f1160a76a8a.avif",
-    "static/media/foto2.png": "/Personal-Portfolio/static/media/foto2.8dd36b85ebbcd4301676.png",
-    "static/media/alten-logo.png": "/Personal-Portfolio/static/media/alten-logo.870ff49f23ad6cf4d814.png",
-    "static/media/amadeus-logo.png": "/Personal-Portfolio/static/media/amadeus-logo.990e1ffad192245a7a80.png",
-    "static/media/ntt-logo.png": "/Personal-Portfolio/static/media/ntt-logo.4287ffbacb63b743991c.png",
-    "static/media/slick.svg": "/Personal-Portfolio/static/media/slick.2630a3e3eab21c607e21.svg",
-    "static/media/slick.eot": "/Personal-Portfolio/static/media/slick.a4e97f5a2a64f0ab1323.eot",
-    "static/media/slick.ttf": "/Personal-Portfolio/static/media/slick.c94f7671dcc99dce43e2.ttf",
-    "static/media/slick.woff": "/Personal-Portfolio/static/media/slick.295183786cd8a1389865.woff",
-    "index.html": "/Personal-Portfolio/index.html"
+    "main.css": "/static/css/main.9140e734.css",
+    "main.js": "/static/js/main.5a7e677b.js",
+    "static/media/bg_clear.jpg": "/static/media/bg_clear.767646ccf084c7d0b2b5.jpg",
+    "static/media/background_cork.avif": "/static/media/background_cork.710d82069f1160a76a8a.avif",
+    "static/media/foto2.png": "/static/media/foto2.8dd36b85ebbcd4301676.png",
+    "static/media/alten-logo.png": "/static/media/alten-logo.870ff49f23ad6cf4d814.png",
+    "static/media/amadeus-logo.png": "/static/media/amadeus-logo.990e1ffad192245a7a80.png",
+    "static/media/ntt-logo.png": "/static/media/ntt-logo.4287ffbacb63b743991c.png",
+    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/index.html"
   },
   "entrypoints": [
-    "static/css/main.55d7d59d.css",
-    "static/js/main.e20c1c7b.js"
+    "static/css/main.9140e734.css",
+    "static/js/main.5a7e677b.js"
   ]
 }
