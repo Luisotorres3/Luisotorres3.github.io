@@ -1,10 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.01b88f9e.css",
-    "main.js": "/static/js/main.7491cbc5.js",
+    "main.css": "/static/css/main.4b8a69d4.css",
+    "main.js": "/static/js/main.da58a487.js",
+    "static/media/MorangaBold.otf": "/static/media/MorangaBold.4a27d46d16773272da5e.otf",
     "static/media/bg_clear.jpg": "/static/media/bg_clear.767646ccf084c7d0b2b5.jpg",
-    "static/media/background_cork.avif": "/static/media/background_cork.710d82069f1160a76a8a.avif",
-    "static/media/foto2.png": "/static/media/foto2.8dd36b85ebbcd4301676.png",
     "static/media/alten-logo.png": "/static/media/alten-logo.870ff49f23ad6cf4d814.png",
     "static/media/amadeus-logo.png": "/static/media/amadeus-logo.990e1ffad192245a7a80.png",
     "static/media/ntt-logo.png": "/static/media/ntt-logo.4287ffbacb63b743991c.png",
@@ -15,7 +14,7 @@
     "index.html": "/index.html"
   },
   "entrypoints": [
-    "static/css/main.01b88f9e.css",
-    "static/js/main.7491cbc5.js"
+    "static/css/main.4b8a69d4.css",
+    "static/js/main.da58a487.js"
   ]
 }
