@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.ba0934be.css",
+    "main.css": "/static/css/main.595dd860.css",
     "main.js": "/static/js/main.a490df99.js",
     "static/media/MorangaBold.otf": "/static/media/MorangaBold.4a27d46d16773272da5e.otf",
     "static/media/bg_clear.jpg": "/static/media/bg_clear.767646ccf084c7d0b2b5.jpg",
@@ -16,7 +16,7 @@
     "index.html": "/index.html"
   },
   "entrypoints": [
-    "static/css/main.ba0934be.css",
+    "static/css/main.595dd860.css",
     "static/js/main.a490df99.js"
   ]
 }
