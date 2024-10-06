@@ -1,12 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.595dd860.css",
-    "main.js": "/static/js/main.a490df99.js",
+    "main.css": "/static/css/main.ae1d859f.css",
+    "main.js": "/static/js/main.d4cdb6a8.js",
+    "static/media/ugr-logo.png": "/static/media/ugr-logo.87dac8ceceda2f8b0ab4.png",
     "static/media/MorangaBold.otf": "/static/media/MorangaBold.4a27d46d16773272da5e.otf",
     "static/media/bg_clear.jpg": "/static/media/bg_clear.767646ccf084c7d0b2b5.jpg",
     "static/media/alten-logo.png": "/static/media/alten-logo.870ff49f23ad6cf4d814.png",
+    "static/media/ntt-logo.png": "/static/media/ntt-logo.cda2814c521cebb624df.png",
+    "static/media/jyv-logo.png": "/static/media/jyv-logo.59921f28424ff3a2a1c5.png",
     "static/media/amadeus-logo.png": "/static/media/amadeus-logo.990e1ffad192245a7a80.png",
-    "static/media/ntt-logo.png": "/static/media/ntt-logo.4287ffbacb63b743991c.png",
     "static/media/backgroundProjects_dark.avif": "/static/media/backgroundProjects_dark.4c65142b594f34137479.avif",
     "static/media/backgroundProjects.avif": "/static/media/backgroundProjects.652aceb4ef586fc00464.avif",
     "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
@@ -16,7 +18,7 @@
     "index.html": "/index.html"
   },
   "entrypoints": [
-    "static/css/main.595dd860.css",
-    "static/js/main.a490df99.js"
+    "static/css/main.ae1d859f.css",
+    "static/js/main.d4cdb6a8.js"
   ]
 }
