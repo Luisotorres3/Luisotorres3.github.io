@@ -1,11 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.d4699b76.css",
-    "main.js": "/static/js/main.8c5cee8a.js",
+    "main.css": "/static/css/main.c0e2e5d2.css",
+    "main.js": "/static/js/main.8e6b6e39.js",
     "static/media/texture_ball.jpg": "/static/media/texture_ball.9856dc49ff7a841a35b4.jpg",
     "static/media/ugr-logo.png": "/static/media/ugr-logo.87dac8ceceda2f8b0ab4.png",
     "static/media/MorangaBold.otf": "/static/media/MorangaBold.4a27d46d16773272da5e.otf",
-    "static/media/bg_clear.jpg": "/static/media/bg_clear.767646ccf084c7d0b2b5.jpg",
     "static/media/alten-logo.png": "/static/media/alten-logo.870ff49f23ad6cf4d814.png",
     "static/media/ntt-logo.png": "/static/media/ntt-logo.cda2814c521cebb624df.png",
     "static/media/jyv-logo.png": "/static/media/jyv-logo.59921f28424ff3a2a1c5.png",
@@ -19,7 +18,7 @@
     "index.html": "/index.html"
   },
   "entrypoints": [
-    "static/css/main.d4699b76.css",
-    "static/js/main.8c5cee8a.js"
+    "static/css/main.c0e2e5d2.css",
+    "static/js/main.8e6b6e39.js"
   ]
 }
