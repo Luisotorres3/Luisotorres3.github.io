@@ -6,3 +6,46 @@
   background-color: white;
   margin: 0 5px;
 }
+
+.gradientText {
+  font-family: "Moranga Bold";
+  background: linear-gradient(
+    90deg,
+    #ff6b6b,
+    #ffd93d,
+    #6bcb77
+  ); /* Definir el degradado */
+  -webkit-background-clip: text; /* Usar el fondo como relleno del texto */
+  -webkit-text-fill-color: transparent; /* Rellenar el texto con transparencia para mostrar el fondo */
+}
+.textGradient {
+  width: 100%;
+  text-align: start;
+  background: linear-gradient(
+    to right,
+    #ec4899,
+    #fb923c
+  ); /* Gradiente de rosa a naranja */
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.textGradient:hover {
+  background: linear-gradient(
+    to left,
+    #ec4899,
+    #fb923c
+  ); /* Gradiente en la dirección opuesta al hacer hover */
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.projectsCard {
+  background-image: url("/src/assets/images/backgroundProjects.avif");
+}
+
+.projectsCard.dark {
+  background-image: url("/src/assets/images/backgroundProjects_dark.avif");
+}

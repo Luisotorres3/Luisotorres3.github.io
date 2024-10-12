@@ -13,3 +13,11 @@
   pointer-events: none; /* Hace que el enlace no sea clicable */
   opacity: 0.6; /* Da un efecto visual de desactivado */
 }
+
+@font-face {
+  font-family: "Moranga Bold";
+  src: local("Moranga Bold"),
+    url("../public/fonts/MorangaBold.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

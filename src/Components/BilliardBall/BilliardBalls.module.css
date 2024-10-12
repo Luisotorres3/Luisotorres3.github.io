@@ -1,0 +1,17 @@
+/* BilliardBalls.module.css */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ball-container {
+  margin-top: 20px;
+  cursor: grab;
+  position: relative;
+}
+
+.ball-container:active {
+  cursor: grabbing;
+}

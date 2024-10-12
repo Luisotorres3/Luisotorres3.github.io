@@ -5,15 +5,17 @@ import {
   NavbarContent,
   NavbarBrand,
   NavbarItem,
+  Button,
 } from "@nextui-org/react";
 import { LSLogo } from "./Logo";
+import { FaBars, FaTimes } from "react-icons/fa"; // Íconos para el menú de hamburguesa
 import styles from "./Navbar.module.css";
 
-export default function NavbarComponent() {
+export default function NavbarComponent({ isDarkMode, setIsDarkMode }) {
   const location = useLocation();
 
   // Estado para rastrear si el tema oscuro está activado
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false); // Estado para el menú móvil
 
   // Efecto para cambiar la clase del body cuando cambie el tema
   useEffect(() => {
@@ -42,8 +44,15 @@ export default function NavbarComponent() {
     "/contact": "contact",
   };
 
+  const menuItems = ["Home", "About", "Projects", "Contact"];
+
   // Establecer la página activa basada en la ruta actual
-  const activePage = routeToPage[pathname] || "home";
+  const activePage = routeToPage[pathname] || "/";
+
+  // Función para alternar el menú móvil
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   return (
     <Navbar shouldHideOnScroll isBlurred={false} className={styles.navbar}>
@@ -54,7 +63,15 @@ export default function NavbarComponent() {
           </Link>
         </NavbarBrand>
       </NavbarContent>
-      <NavbarContent justify="end">
+
+      {/* Botón de Menú Móvil */}
+      <NavbarItem className="md:hidden">
+        <Button auto flat onClick={toggleMenu}>
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </Button>
+      </NavbarItem>
+
+      <NavbarContent className="hidden md:flex" justify="end">
         <NavbarItem>
           <Link
             to="/about"
@@ -95,22 +112,68 @@ export default function NavbarComponent() {
           </Link>
         </NavbarItem>
       </NavbarContent>
-      <NavbarItem>
-        <label
-          className="inline-block pl-[0.15rem] hover:cursor-pointer"
-          htmlFor="flexSwitchCheckDefault"
-        >
-          {isDarkMode ? "☾ Dark" : "☀ Light"}
-        </label>
-        <input
-          className="mr-2 mt-[0.3rem] h-3.5 w-8 appearance-none rounded-[0.4375rem] bg-neutral-300 before:pointer-events-none before:absolute before:h-3.5 before:w-3.5 before:rounded-full before:bg-transparent before:content-[''] after:absolute after:z-[2] after:-mt-[0.1875rem] after:h-5 after:w-5 after:rounded-full after:border-none after:bg-neutral-100 after:shadow-[0_0px_3px_0_rgb(0_0_0_/_7%),_0_2px_2px_0_rgb(0_0_0_/_4%)] after:transition-[background-color_0.2s,transform_0.2s] after:content-[''] checked:bg-primary checked:after:absolute checked:after:z-[2] checked:after:-mt-[3px] checked:after:ml-[1.0625rem] checked:after:h-5 checked:after:w-5 checked:after:rounded-full checked:after:border-none checked:after:bg-primary checked:after:shadow-[0_3px_1px_-2px_rgba(0,0,0,0.2),_0_2px_2px_0_rgba(0,0,0,0.14),_0_1px_5px_0_rgba(0,0,0,0.12)] checked:after:transition-[background-color_0.2s,transform_0.2s] checked:after:content-[''] hover:cursor-pointer focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[3px_-1px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-5 focus:after:w-5 focus:after:rounded-full focus:after:content-[''] checked:focus:border-primary checked:focus:bg-primary checked:focus:before:ml-[1.0625rem] checked:focus:before:scale-100 checked:focus:before:shadow-[3px_-1px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] dark:bg-neutral-600 dark:after:bg-neutral-400 dark:checked:bg-primary dark:checked:after:bg-primary dark:focus:before:shadow-[3px_-1px_0px_13px_rgba(255,255,255,0.4)] dark:checked:focus:before:shadow-[3px_-1px_0px_13px_#3b71ca]"
-          type="checkbox"
-          role="switch"
-          id="flexSwitchCheckDefault"
-          checked={isDarkMode}
-          onChange={toggleTheme}
-        />
+
+      {/* Toggle del Tema */}
+      <NavbarItem className="md:flex">
+        <div className="relative flex items-center">
+          {/* Toggle Switch */}
+          <input
+            type="checkbox"
+            id="themeToggle"
+            role="switch"
+            className="sr-only peer"
+            checked={isDarkMode}
+            onChange={toggleTheme}
+          />
+          {/* Toggle Container */}
+          <label
+            htmlFor="themeToggle"
+            className="w-14 h-8 bg-gray-300 rounded-full flex items-center cursor-pointer relative peer-checked:bg-gray-700 transition-colors duration-300"
+          >
+            {/* Toggle Knob */}
+            <span
+              className={`w-6 h-6 bg-white rounded-full shadow-md transform transition-transform duration-300 flex justify-center items-center ${
+                isDarkMode ? "translate-x-7" : "translate-x-1"
+              }`}
+            >
+              {/* Ícono dentro del Knob que cambia */}
+              {isDarkMode ? (
+                <span className="text-blue-400">🌙</span>
+              ) : (
+                <span className="text-yellow-400">☀️</span>
+              )}
+            </span>
+          </label>
+        </div>
       </NavbarItem>
+      {/* Menú desplegable para móviles */}
+      {menuOpen && (
+        <div className="fixed pt-16 top-24 left-0 w-full h-screen bg-black bg-opacity-100 text-white z-50 flex flex-col items-center md:hidden">
+          <nav className="flex flex-col gap-8">
+            {menuItems.map((item, index) =>
+              item.toLowerCase() != "home" ? (
+                <Link
+                  key={index}
+                  to={`/${item.toLowerCase()}`}
+                  className={`${styles["unstyled-link"]} text-2xl`}
+                  onClick={() => setMenuOpen(false)} // Cierra el menú al hacer clic
+                >
+                  {item}
+                </Link>
+              ) : (
+                <Link
+                  key={index}
+                  to={`/`}
+                  className={`${styles["unstyled-link"]} text-2xl`}
+                  onClick={() => setMenuOpen(false)} // Cierra el menú al hacer clic
+                >
+                  {item}
+                </Link>
+              )
+            )}
+          </nav>
+        </div>
+      )}
     </Navbar>
   );
 }

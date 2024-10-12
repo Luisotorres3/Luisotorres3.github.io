@@ -24,7 +24,6 @@ function HeroText3D({ handleEnter }) {
   // Animación con useFrame
   useFrame((state, delta) => {
     if (refLuis.current) {
-      // Animación de "LUIS" (de izquierda al centro)
       refLuis.current.position.x = Math.min(
         refLuis.current.position.x + delta * 2,
         finalPositionLuis
@@ -32,7 +31,6 @@ function HeroText3D({ handleEnter }) {
       refLuis.current.position.y = 0; // Asegurar que esté centrado en Y
     }
     if (refSoto.current) {
-      // Animación de "SOTO" (de arriba hacia el centro)
       refSoto.current.position.y = Math.max(
         refSoto.current.position.y - delta * 2,
         0
@@ -40,7 +38,6 @@ function HeroText3D({ handleEnter }) {
       refSoto.current.position.x = finalPositionSoto; // Mantener en el centro en X
     }
     if (refTorres.current) {
-      // Animación de "TORRES" (de derecha al centro)
       refTorres.current.position.x = Math.max(
         refTorres.current.position.x - delta * 2,
         finalPositionTorres
@@ -49,12 +46,14 @@ function HeroText3D({ handleEnter }) {
     }
   });
 
+  const fontUrl = `${process.env.PUBLIC_URL}/gt.json`; // Asegura que la fuente se carga desde la carpeta `public`.
+
   return (
     <>
       {/* "LUIS" animado desde la izquierda */}
       <Text3D
         ref={refLuis}
-        font={"gt.json"}
+        font={fontUrl}
         size={1}
         height={0.5}
         position={[-15, 0, 0]} // Inicialmente lejos a la izquierda
@@ -70,7 +69,7 @@ function HeroText3D({ handleEnter }) {
       {/* "SOTO" animado desde arriba */}
       <Text3D
         ref={refSoto}
-        font={"gt.json"}
+        font={fontUrl}
         size={1}
         height={0.5}
         position={[0, 10, 0]} // Inicialmente arriba
@@ -86,7 +85,7 @@ function HeroText3D({ handleEnter }) {
       {/* "TORRES" animado desde la derecha */}
       <Text3D
         ref={refTorres}
-        font={"gt.json"}
+        font={fontUrl}
         size={1}
         height={0.5}
         position={[15, 0, 0]} // Inicialmente lejos a la derecha
@@ -102,10 +101,7 @@ function HeroText3D({ handleEnter }) {
       {/* Botón 3D */}
       <mesh position={[0, -3, 0]} onClick={handleEnter}>
         <boxGeometry args={[3, 1, 1]} />
-        <meshStandardMaterial
-          className={styles.enterButtonText}
-          color="darkmagenta"
-        />
+        <meshStandardMaterial color="darkmagenta" />
         <Html position={[0, 0, 0.6]} transform>
           <div className={styles.enterButtonText} onClick={handleEnter}>
             Entrar

@@ -11,10 +11,10 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Projects from "./Pages/Projects";
 
-function RutasApp() {
+function RutasApp({ isDarkMode }) {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Home isDarkMode={isDarkMode} />} />
       <Route path="/about" element={<About />} />
       <Route path="/projects" element={<Projects />} />
     </Routes>
@@ -24,6 +24,8 @@ function RutasApp() {
 function App() {
   const location = useLocation(); // Obtener la ruta actual
   const [showAnimation, setShowAnimation] = useState(false);
+
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   // Verificar si la animación debe mostrarse
   useEffect(() => {
@@ -46,9 +48,12 @@ function App() {
       ) : (
         // Contenido principal de la web
         <>
-          <NavbarComponent />
+          <NavbarComponent
+            isDarkMode={isDarkMode}
+            setIsDarkMode={setIsDarkMode}
+          />
           {/* Resto del contenido */}
-          <RutasApp />
+          <RutasApp isDarkMode={isDarkMode} />
         </>
       )}
     </div>
