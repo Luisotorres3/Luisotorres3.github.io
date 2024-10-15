@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.21f4d558.css",
-    "main.js": "/static/js/main.f34fb729.js",
+    "main.css": "/static/css/main.16c4d63e.css",
+    "main.js": "/static/js/main.43e4663c.js",
     "static/media/texture_ball.jpg": "/static/media/texture_ball.9856dc49ff7a841a35b4.jpg",
     "static/media/ugr-logo.png": "/static/media/ugr-logo.87dac8ceceda2f8b0ab4.png",
     "static/media/MorangaBold.otf": "/static/media/MorangaBold.4a27d46d16773272da5e.otf",
@@ -18,7 +18,7 @@
     "index.html": "/index.html"
   },
   "entrypoints": [
-    "static/css/main.21f4d558.css",
-    "static/js/main.f34fb729.js"
+    "static/css/main.16c4d63e.css",
+    "static/js/main.43e4663c.js"
   ]
 }
