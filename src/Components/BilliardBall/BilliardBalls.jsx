@@ -1,8 +1,8 @@
 import React, { useState, useRef } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { OrbitControls, useTexture, Decal } from "@react-three/drei";
-import styles from "./BilliardBalls.module.css";
+import { OrbitControls, Decal } from "@react-three/drei";
 import { TextureLoader } from "three";
+import styles from "./BilliardBalls.module.css";
 
 // URL de la textura de fondo para las bolas
 const backgroundTexture = require("../../assets/images/texture_ball.jpg");
@@ -89,16 +89,6 @@ function BilliardBall({ position, logo, color, lightPosition }) {
           map={texture}
         />
       </mesh>
-
-      {/* Plano debajo de la bola para ver la sombra */}
-      <mesh
-        position={[position[0], position[1] - 1.2, position[2]]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        receiveShadow
-      >
-        <planeGeometry args={[3, 3]} />
-        <shadowMaterial transparent opacity={0.4} />
-      </mesh>
     </group>
   );
 }
@@ -110,25 +100,29 @@ export default function BilliardBalls() {
 
   // Manejar el movimiento del ratón para actualizar la posición de la luz
   const handleMouseMove = (event) => {
-    // Obtener el tamaño del contenedor y ajustar la posición relativa del ratón
     const x = (event.clientX / window.innerWidth) * 10 - 5;
     const y = -(event.clientY / window.innerHeight) * 10 + 5;
     setLightPosition([x, y, 5]); // Actualizar la posición de la luz
   };
 
   return (
-    <div className={styles.container} onMouseMove={handleMouseMove}>
+    <div className={styles.container}>
       {technologies.map((tech, index) => (
         <div
           key={index}
-          className={`${styles["ball-container"]} w-[120px] h-[120px] md:w-[100px] md:h-[100px] lg:w-[200px] lg:h-[200px]`}
+          className={`${styles["ball-container"]} w-20 md:w-30 lg:w-40 h-20 md:h-30 lg:h-40`}
         >
           {/* Canvas individual para cada bola */}
           <Canvas
-            camera={{ position: [0, 0, 4], fov: 50 }}
-            style={{ width: "100%", height: "100%" }}
+            camera={{ position: [0, 0, 2.5], fov: 50 }}
+            style={{
+              width: "100%",
+              height: "100%",
+              borderRadius: "50%",
+            }}
+            gl={{ alpha: true }} // Permitir transparencia
+            shadows
           >
-            {/* Luces configuradas */}
             {/* Renderizar la bola individual */}
             <BilliardBall
               position={[0, 0, 0]}
@@ -136,7 +130,7 @@ export default function BilliardBalls() {
               logo={tech.logo}
               lightPosition={lightPosition}
             />
-            <OrbitControls enableZoom={false} />
+            <OrbitControls enableZoom={false} enablePan={false} />
           </Canvas>
         </div>
       ))}

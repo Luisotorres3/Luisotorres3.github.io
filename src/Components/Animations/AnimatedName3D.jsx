@@ -104,7 +104,7 @@ function HeroText3D({ handleEnter }) {
         <meshStandardMaterial color="darkmagenta" />
         <Html position={[0, 0, 0.6]} transform>
           <div className={styles.enterButtonText} onClick={handleEnter}>
-            Entrar
+            Enter
           </div>
         </Html>
       </mesh>

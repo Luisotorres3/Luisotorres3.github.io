@@ -1,51 +1,61 @@
+#first_section {
+}
+
 /* Estilo para los puntos del carrusel */
 .customDot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: white;
+  background-color: var(--white-color);
   margin: 0 5px;
 }
 
-.gradientText {
-  font-family: "Moranga Bold";
-  background: linear-gradient(
-    90deg,
-    #ff6b6b,
-    #ffd93d,
-    #6bcb77
-  ); /* Definir el degradado */
-  -webkit-background-clip: text; /* Usar el fondo como relleno del texto */
-  -webkit-text-fill-color: transparent; /* Rellenar el texto con transparencia para mostrar el fondo */
+/* Barra lateral de íconos sociales */
+.sideElement {
+  position: fixed;
+  left: 3rem;
+  bottom: 0;
+  padding: 10px;
 }
-.textGradient {
+
+.sideElement ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: var(--primary-color);
+}
+
+.sideElement ul li {
+  list-style: none;
+}
+
+.sideElement ul a svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--primary-color);
+  transition: stroke 0.3s ease;
+}
+
+.sideElement ul a:hover svg {
+  stroke: var(--hover-color);
+}
+
+.sideElement ul li:hover {
+  transform: translateY(-3px);
+}
+
+.linksHorizontal {
+  position: unset;
+  left: 0;
+  bottom: 0;
+  padding: 0;
   width: 100%;
-  text-align: start;
-  background: linear-gradient(
-    to right,
-    #ec4899,
-    #fb923c
-  ); /* Gradiente de rosa a naranja */
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
 }
 
-.textGradient:hover {
-  background: linear-gradient(
-    to left,
-    #ec4899,
-    #fb923c
-  ); /* Gradiente en la dirección opuesta al hacer hover */
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-.projectsCard {
-  background-image: url("/src/assets/images/backgroundProjects.avif");
-}
-
-.projectsCard.dark {
-  background-image: url("/src/assets/images/backgroundProjects_dark.avif");
+.linksHorizontal ul {
+  display: flex;
+  flex-direction: row;
+  color: var(--primary-color);
+  width: 80%;
+  justify-content: space-between;
 }

@@ -44,7 +44,7 @@ export default function NavbarComponent({ isDarkMode, setIsDarkMode }) {
     "/contact": "contact",
   };
 
-  const menuItems = ["Home", "About", "Projects", "Contact"];
+  const menuItems = ["About", "Studies", "Experience", "Projects", "Contact"];
 
   // Establecer la página activa basada en la ruta actual
   const activePage = routeToPage[pathname] || "/";
@@ -58,7 +58,11 @@ export default function NavbarComponent({ isDarkMode, setIsDarkMode }) {
     <Navbar shouldHideOnScroll isBlurred={false} className={styles.navbar}>
       <NavbarContent className="sm:flex gap-4" justify="left">
         <NavbarBrand className={styles.logo}>
-          <Link to="/" className={styles["unstyled-link"]}>
+          <Link
+            to="/"
+            className={styles["unstyled-link"]}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
             <LSLogo />
           </Link>
         </NavbarBrand>
@@ -74,39 +78,85 @@ export default function NavbarComponent({ isDarkMode, setIsDarkMode }) {
       <NavbarContent className="hidden md:flex" justify="end">
         <NavbarItem>
           <Link
-            to="/about"
             className={`${styles["unstyled-link"]} ${
               activePage === "about"
                 ? styles["active-link"]
                 : styles["inactive-link"]
             }`}
             aria-current={activePage === "about" ? "page" : undefined}
+            onClick={() =>
+              document
+                .getElementById("about")
+                .scrollIntoView({ behavior: "smooth" })
+            }
           >
             About
           </Link>
         </NavbarItem>
         <NavbarItem>
           <Link
-            to="/projects"
+            className={`${styles["unstyled-link"]} ${
+              activePage === "about"
+                ? styles["active-link"]
+                : styles["inactive-link"]
+            }`}
+            aria-current={activePage === "about" ? "page" : undefined}
+            onClick={() =>
+              document
+                .getElementById("studies")
+                .scrollIntoView({ behavior: "smooth" })
+            }
+          >
+            Studies
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link
             className={`${styles["unstyled-link"]} ${
               activePage === "projects"
                 ? styles["active-link"]
                 : styles["inactive-link"]
             }`}
             aria-current={activePage === "projects" ? "page" : undefined}
+            onClick={() =>
+              document
+                .getElementById("experience")
+                .scrollIntoView({ behavior: "smooth" })
+            }
+          >
+            Experience
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link
+            className={`${styles["unstyled-link"]} ${
+              activePage === "projects"
+                ? styles["active-link"]
+                : styles["inactive-link"]
+            }`}
+            aria-current={activePage === "projects" ? "page" : undefined}
+            onClick={() =>
+              document
+                .getElementById("projects")
+                .scrollIntoView({ behavior: "smooth" })
+            }
           >
             Projects
           </Link>
         </NavbarItem>
         <NavbarItem>
           <Link
-            to="/contact"
             className={`${styles["unstyled-link"]} ${
               activePage === "contact"
                 ? styles["active-link"]
                 : styles["inactive-link"]
             }`}
             aria-current={activePage === "contact" ? "page" : undefined}
+            onClick={() =>
+              document
+                .getElementById("contact")
+                .scrollIntoView({ behavior: "smooth" })
+            }
           >
             Contact
           </Link>
@@ -151,12 +201,17 @@ export default function NavbarComponent({ isDarkMode, setIsDarkMode }) {
         <div className="fixed pt-16 top-24 left-0 w-full h-screen bg-black bg-opacity-100 text-white z-50 flex flex-col items-center md:hidden">
           <nav className="flex flex-col gap-8">
             {menuItems.map((item, index) =>
-              item.toLowerCase() != "home" ? (
+              item.toLowerCase() !== "home" ? (
                 <Link
                   key={index}
-                  to={`/${item.toLowerCase()}`}
                   className={`${styles["unstyled-link"]} text-2xl`}
-                  onClick={() => setMenuOpen(false)} // Cierra el menú al hacer clic
+                  onClick={(e) => {
+                    e.preventDefault(); // Evitar el comportamiento predeterminado
+                    document
+                      .getElementById(`${item.toLowerCase()}`)
+                      .scrollIntoView({ behavior: "smooth" });
+                    setMenuOpen(false); // Cerrar el menú
+                  }}
                 >
                   {item}
                 </Link>

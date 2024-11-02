@@ -4,12 +4,14 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .ball-container {
-  margin-top: 20px;
+  border-radius: 50%; /* Asegurar que el contenedor sea redondo */
+  overflow: hidden;
+  margin: 10px;
   cursor: grab;
-  position: relative;
 }
 
 .ball-container:active {

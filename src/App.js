@@ -47,14 +47,14 @@ function App() {
         <AnimatedName3D handleEnter={handleEnter} />
       ) : (
         // Contenido principal de la web
-        <>
+        <div className="content mx-0 md:mx-20 lg:mx-20">
           <NavbarComponent
             isDarkMode={isDarkMode}
             setIsDarkMode={setIsDarkMode}
           />
           {/* Resto del contenido */}
           <RutasApp isDarkMode={isDarkMode} />
-        </>
+        </div>
       )}
     </div>
   );

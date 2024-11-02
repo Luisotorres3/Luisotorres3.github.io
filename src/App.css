@@ -1,94 +1,137 @@
-/* Asegura que el contenedor principal ocupe el 100% de la altura de la pantalla */
-
-/* Importar la fuente Rubik desde Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
-
-.App {
-  font-family: "Rubik", sans-serif;
-  text-align: center;
-  width: 100%;
-  min-height: calc(100vh); /* Ajusta el valor del padding aquí */
-  padding: 2rem 2rem 0 2rem; /* Espaciado interno */
-  box-sizing: border-box; /* Incluir el padding en el tamaño total del elemento */
+:root {
+  --primary-color: #4caf50; /* Color principal usado para elementos destacados */
+  --primary-color-rgb: 76, 175, 80;
+  --hover-color: #06e90d; /* Color al pasar el ratón (hover) sobre ciertos elementos */
+  --text-shadow-color: rgba(
+    255,
+    107,
+    107,
+    0.5
+  ); /* Color de sombra del texto en hover */
+  --navbar-bg-color: rgba(255, 255, 255, 0); /* Color de fondo del navbar */
+  --background-light: #ffffff; /* Color de fondo para el modo claro */
+  --foreground-light: #000000; /* Color del texto para el modo claro */
+  --background-dark: #0a192f; /* Color de fondo para el modo oscuro */
+  --foreground-dark: #ffffff; /* Color del texto para el modo oscuro */
+  --scrollbar-track-light: #f0f0f0; /* Color del fondo del scrollbar en modo claro */
+  --scrollbar-track-dark: rgba(
+    18,
+    18,
+    18,
+    0.9
+  ); /* Color del fondo del scrollbar en modo oscuro */
+  --scrollbar-thumb-shadow: rgba(
+    0,
+    0,
+    0,
+    0.25
+  ); /* Sombra interna del thumb (barra de desplazamiento) */
+  --gradient-start: #ff6b6b;
+  --gradient-middle: #ffd93d;
+  --gradient-end: #6bcb77;
+  --text-gradient-start: #4caf50;
+  --text-gradient-end: #06e90d;
+  --white-color: #ffffff;
+  --text-color-dark: var(--white-color);
 }
 
-/* Estilos para listas sin viñetas */
+/* Importa la fuente Rubik desde Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+
+html,
+body,
+#root {
+  /* Asegura que el contenedor principal y la raíz ocupen el 100% de la pantalla */
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* Define la fuente predeterminada de la aplicación */
+  font-family: "Rubik", sans-serif;
+
+  /* Organiza el contenido en columna y activa las transiciones de color */
+  display: flex;
+  flex-direction: column;
+  transition: background-color 1s ease, color 1s ease;
+
+  /* Usa colores variables para el modo claro por defecto */
+  background-color: var(--background-light);
+  color: var(--foreground-light) !important;
+}
+
+body.dark {
+  /* Cambia a los colores del modo oscuro */
+  background-color: var(--background-dark);
+  color: var(--text-color-dark) !important;
+}
+
+.App {
+  /* El contenedor principal ocupa el 100% del ancho y tiene un espaciado interno */
+  width: 100%;
+  min-height: calc(
+    100vh
+  ); /* Se asegura que el contenido ocupe la altura completa */
+  padding: 2rem 2rem 0; /* Espaciado interno */
+  box-sizing: border-box; /* Incluye padding en el tamaño total del contenedor */
+  text-align: center; /* Alineación centrada del texto */
+}
+
+.content {
+  height: 100%;
+}
+
+/* Estilo para listas sin viñetas */
 ul {
-  list-style-type: none;
+  list-style-type: none; /* Elimina las viñetas de la lista */
   padding: 0;
   margin: 0;
 }
 
-/* Espaciado para los elementos de lista */
+/* Espaciado vertical entre los elementos de la lista */
 li {
   margin: 10px 0;
 }
 
 /* Estilos para los enlaces */
 a {
-  color: #0366d6;
-  text-decoration: none;
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  transition: color 0.3s ease; /* Transición suave al cambiar el color */
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: underline; /* Subrayado al pasar el ratón */
 }
 
-/* Asegura que html, body y root ocupen el 100% de la pantalla */
-html,
-body,
-#root {
-  min-height: 100%;
-  height: auto;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  transition: background-color 1s ease, color 1s ease;
-}
-
-body {
-  --background: #ffffff;
-  --foreground: #000000;
-  color: #000000 !important;
-  background-image: url(/src/assets/images/bg_clear.jpg);
-}
-
-body.dark {
-  --background: #000000;
-  --foreground: #ffffff;
-  color: white !important;
-  background-image: url("/src/assets/images/bg.jpg");
-}
-
-/* Estilo del Scrollbar para Modo Claro */
+/* Estilo del Scrollbar */
 body::-webkit-scrollbar {
-  width: 12px;
+  width: 12px; /* Ancho del scrollbar */
 }
 
 body::-webkit-scrollbar-track {
-  background: #f0f0f0; /* Color de fondo del track */
+  background: var(
+    --scrollbar-track-light
+  ); /* Color de fondo del scrollbar en modo claro */
 }
 
 body::-webkit-scrollbar-thumb {
   background: linear-gradient(
     180deg,
-    #ff7e5f,
-    #feb47b
-  ); /* Gradiente del thumb */
-  border: 3px solid #f0f0f0; /* Añade un borde alrededor del thumb */
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25); /* Sombra interna */
-  transition: background 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+    var(--primary-color),
+    var(--hover-color)
+  ); /* Gradiente para el thumb (deslizador) */
+  border: 3px solid var(--scrollbar-track-light); /* Borde para el thumb */
+  box-shadow: inset 0 0 10px var(--scrollbar-thumb-shadow); /* Sombra interna para el thumb */
+  transition: background 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
 }
 
 body.dark::-webkit-scrollbar-track {
-  background: rgba(18, 18, 18, 0.9);
-  /* Color de fondo del track en modo oscuro */
+  background: var(
+    --scrollbar-track-dark
+  ); /* Cambia el fondo del scrollbar en modo oscuro */
 }
 
 body.dark::-webkit-scrollbar-thumb {
-  border: 3px solid rgba(18, 18, 18, 0.9); /* Borde oscuro para que coincida con el track */
+  border: 3px solid var(--scrollbar-track-dark); /* Cambia el borde del thumb en modo oscuro */
 }
